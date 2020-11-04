@@ -5,3 +5,7 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 run ApplicationController
+use BooksController
+use UsersController
+use SessionsController
+

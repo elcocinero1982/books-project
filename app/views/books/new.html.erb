@@ -1,0 +1,14 @@
+
+<h1>New Book Creation</h1>
+<form method="post" action="/books">
+  <p>
+    <div><label for="title">Title</label></div>
+    <input id="title" type="text" name="book[title]" />
+  </p>
+  <p>
+    <div><label for="content">content</label></div>
+    <textarea rows="8" cols="45" id="content" type="text" name="book[content]"></textarea>
+  
+  </p>
+  <input type="submit" value="Create Book" />
+</form>

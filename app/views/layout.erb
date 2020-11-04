@@ -15,6 +15,21 @@
   </head>
   <body>
     <div class="wrapper">
+    <nav>
+    <a href="/books">Books</a>
+    <% if !logged_in? %>
+    <a href="/login">Log In</a>
+    <a href="/users/new">Sign Up</a>
+    <% else %>
+    <a href="/books/new">New Book</a>
+
+    <form method="post" action="/logout">
+      <input type="hidden" name="_method" value="delete" />
+      <input type="submit" value="Log Out" />
+    </form>
+  <% end %>
+  </nav>
+  <%= styled_flash %>
 
         <%= yield %>
 
