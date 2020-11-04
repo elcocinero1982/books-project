@@ -13,6 +13,12 @@ gem 'bcrypt'
 gem 'tux'
 gem 'sinatra-flash'
 
+
+group :development, :test do 
+  gem 'dotenv'
+  gem 'session_secret_generator'
+end
+
 group :test do
   gem 'rspec'
   gem 'capybara'
@@ -20,7 +26,3 @@ group :test do
   gem 'database_cleaner', git: 'https://github.com/bmabey/database_cleaner.git'
 end
 
-group :development, :test do 
-  gem 'dotenv'
-  gem 'session_secret_generator'
-end

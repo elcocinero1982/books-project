@@ -26,7 +26,7 @@ end
 
   # GET: /books/5
   get "/books/:id" do
-   #set_book
+  set_book
     @book = Book.find(params[:id])
     erb :"/books/show.html"
   end
@@ -46,8 +46,11 @@ end
       flash[:success] = "Book successfully updated"
       redirect "/books/#{@post.id}"
     else 
-    redirect "/books/:id"
-  end
+      redirect "/books/:id"
+    end  
+  end  
+ 
+
 
   # DELETE: /books/5/delete
   delete "/books/:id/delete" do
@@ -58,6 +61,7 @@ end
     redirect "/books"
   end
 
+  private
 
   def set_book
     @book = Book.find_by_id(params[:id])
@@ -78,4 +82,4 @@ end
     current_user == book.author
   end
 end
-end
+

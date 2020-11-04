@@ -1,27 +1,26 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
-<h1>Edit Post</h1>
+<h1>Edit Book</h1>
 
-<% if @post.errors.any? %>
+<% if @book.errors.any? %>
   <div id="error_explanation">
-    <h2><%= @post.errors.count %> error(s) prohibited this post from being saved:</h2>
+    <h2><%= @book.errors.count %> error(s) prohibited this book from being saved:</h2>
  
     <ul>
-    <% @post.errors.full_messages.each do |msg| %>
+    <% @book.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>
   </div>
 <% end %>
-<form method="post" action="/posts/<%= @post.id %>">
+<form method="post" action="/books/<%= @book.id %>">
   <input type="hidden" name="_method" value="patch" />
   <p>
     <div><label for="title">Title</label></div>
-    <input id="title" type="text" name="post[title]" value="<%= @post.title %>" />
+    <input id="title" type="text" name="book[title]" value="<%= @book.title %>" />
   </p>
   <p>
     <div><label for="content">content</label></div>
-    <textarea rows="8" cols="45" id="content" type="text" name="post[content]"><%= @post.content %></textarea>
+    <textarea rows="8" cols="45" id="content" type="text" name="book[content]"><%= @book.content %></textarea>
   
   </p>
-  <input type="submit" value="Update Post" />
+  <input type="submit" value="Update Book" />
 </form>
